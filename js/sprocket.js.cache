@@ -1,7 +1,0 @@
-$(function() {
-	console.log('Test');
-	
-	/* However multiline ones will stay */
-	$('form').submit(function() { return false; });
-	$('.form').submit(function() { return false; });
-});
