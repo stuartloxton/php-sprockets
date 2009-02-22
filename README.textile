@@ -1,0 +1,3 @@
+h1. PHP Sprocket
+
+PHP Sprocket is a port of Sprockets - the ruby library for Javascript dependency management and concatenation.
