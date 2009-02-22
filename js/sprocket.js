@@ -1,3 +1,6 @@
+/* Author: <%= AUTHOR %> */
+/* Author: <?=AUTHOR?> */
+
 $(function() {
 	console.log('Test');
 	// Single line comments will be stripped out by Sprocket
