@@ -10,6 +10,7 @@ class PHPSprocket
 	var $baseJs = '../js';
 	var $js = '';
 	var $filePath = '';
+	var $assetFolder = '..';
 	
 	function __construct($file) {
 		$this->filePath = str_replace($this->baseUri, '..', $file);
@@ -50,6 +51,13 @@ class PHPSprocket
 		} else if(preg_match('/\<([^\>]+)\>/', $param, $match)) {
 			return $this->parseJS(basename($context.'/'.$match[1].'.js'), $this->baseJs);
 		} else return '';
+	}
+	
+	function provide_command($param, $context) {
+		preg_match('/\"([^\"]+)\"/', $param, $match);
+		foreach(glob($context.'/'.$match[1].'/*') as $asset) {
+			shell_exec('cp -r '.realpath($asset).' '.realpath($this->assetFolder));
+		}
 	}
 	
 }
