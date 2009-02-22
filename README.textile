@@ -1,3 +1,20 @@
 h1. PHP Sprocket
 
-PHP Sprocket is a port of Sprockets - the ruby library for Javascript dependency management and concatenation.
+PHP Sprocket is a port of Sprockets - the ruby library for Javascript dependency management and concatenation. For syntax instructions visit http://getsprockets.org/installation_and_usage.
+
+1. If you already have a .htaccess file then add the rules that come with phpsprocket into it and change the path to point to phpsprocket.
+2. Change the top variables in phpsprocket.php to reflect your settings.
+3. Enjoy clean JavaScript
+
+h3. Changes to the original sprockets.
+
+PHP Sprockets currently acts as a transparent proxy as default and caches results. Because of this you do not have to initialize any classes in your app and sprocket stays separate.
+
+For constants you can use either <%= or <?= this is to make the syntax closer to PHP's but still keep compatibility with original sprocket files.
+
+By adding ?debug to the URL of a javascript file it stops any cacheing taking place.
+
+
+h3. Planned/Proposed Changed
+
+1. Flag directives, e.g. //= flag "gzip:true" would gzip the JS, possible flags: stripcomments, minify and gzip.

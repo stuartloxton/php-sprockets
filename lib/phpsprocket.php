@@ -64,7 +64,6 @@ class PHPSprocket
 			shell_exec('cp -r '.realpath($asset).' '.realpath($this->assetFolder));
 		}
 	}
-	
 	function parseConstants($file) {
 		$contents = file_get_contents($file);
 		preg_match_all('/^([A-Za-z][^\:]+)\:([^\n]+)/', $contents, $matches);
@@ -80,6 +79,5 @@ class PHPSprocket
 			$this->js = str_replace($replace, $this->constants[$matches[2][$key]], $this->js);
 		}
 	}
-	
 }
 $sprocket = new PHPSprocket(preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']));
