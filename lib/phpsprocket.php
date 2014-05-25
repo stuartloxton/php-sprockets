@@ -1,5 +1,4 @@
 <?php
-header('Content-type: application/x-javascript');
 /**
 * PHPSprocket - A PHP implementation of Sprocket
 */
@@ -80,4 +79,3 @@ class PHPSprocket
 		}
 	}
 }
-$sprocket = new PHPSprocket(preg_replace('/\?.*/', '', $_SERVER['REQUEST_URI']));
